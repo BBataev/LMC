@@ -1,0 +1,88 @@
+.noteForm-ins {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 41px 39px;
+    background-color: var(--mains-color);
+    border-radius: 30px;
+}
+
+.noteForm-group {
+    position: relative;
+    display: flex;
+}
+
+.noteForm-title {
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.noteForm-text {
+    margin-bottom: 38px;
+}
+
+.title__inputGroup {
+    width: 355px;
+    border: none;
+    border-radius: 30px;
+    padding: 17px 27px;    
+    font-size: 16px;
+    font-family: 'Inter';
+}
+
+.title__inputGroup:focus {
+    outline: none;
+}
+
+.title__input {
+    width: 355px;
+    padding: 17px 27px;
+}
+
+.text__input {
+    height: 125px;
+    resize: none;
+}
+
+.text__input::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.title__labelGroup {
+    position: absolute;
+    left: 27px;
+    font-size: 16px;
+    font-weight: 300;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    color: var(--text-secondary);
+    transition: transform .2s ease-in-out;
+}
+
+
+.text__label {
+    top: 17px;
+}
+
+.noteForm-group .title__inputGroup:focus~.title__labelGroup,
+.noteForm-group .title__inputGroup:valid~.title__labelGroup  {
+    transform: translateY(-40px);
+}
+
+.noteForm__btn {
+    border: none;
+    border-radius: 30px;
+    padding: 16px 67px;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    background-color: var(--primary);
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+.noteForm__btn:hover {
+    background-color: var(--primary-hover);
+}

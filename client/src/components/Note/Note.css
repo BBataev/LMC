@@ -1,0 +1,31 @@
+.post {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 846px;
+    border-radius: 30px;
+    padding: 30px 27px 25px;
+    background-color: var(--background-input);
+}
+
+.post__createTime {
+    position: absolute;
+    top: 17px;
+    right: 26px;
+    color: var(--text-third);
+}
+
+.post__title {
+    padding-left: 10px;
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.post__descr {
+    text-align: start;
+    font-size: 20px;
+}

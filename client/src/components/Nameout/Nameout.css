@@ -1,0 +1,15 @@
+.username {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 10px 25px;
+    color: var(--text-secondary);
+}
+
+.pending {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px 25px;
+    color: var(--text-secondary);
+}

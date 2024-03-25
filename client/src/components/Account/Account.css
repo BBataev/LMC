@@ -1,0 +1,11 @@
+.account {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+}
+
+.account__username {
+    border-radius: 30px;
+    margin-bottom: 7px;
+    background-color: var(--mains-color);
+}

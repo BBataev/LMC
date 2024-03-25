@@ -1,0 +1,36 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 30px;
+  font-family: "Inter";
+  font-weight: 300;
+  color: var(--text-secondary);
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--primary-hover);
+}
+
+.button[data-size='small'] {
+  padding: 7px 25px;
+  font-size: 14px;
+}
+
+.button[data-size='medium'] {
+  padding: 10px 45px;
+  font-size: 16px;
+}
+
+.button[data-size='big'] {
+  padding: 16px 67px;
+  font-size: 20px;
+}
+
+.button:disabled {
+  opacity: 0.7;
+}

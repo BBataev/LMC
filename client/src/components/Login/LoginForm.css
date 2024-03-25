@@ -1,0 +1,127 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 465px;
+    height: 508px;
+    border-radius: 30px;
+    padding: 32px 0;
+    gap: 15px;
+    background-color: var(--mains-color);
+}
+
+.form__title {
+    margin: 0;
+    margin-bottom: 39px;
+    font-size: 28px;
+    font-weight: 100;
+    color: #fff;
+}
+
+.input-name__input:focus {
+    outline: none;
+}
+
+.form__inputTitled {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.form__input-name {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form__input-email {
+    position: relative;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.form__input-password {
+    position: relative;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.input-name__input {
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    font-family: 'inter';
+    font-weight: 400;
+    width: 355px;
+    color: var(--text-primary);
+    padding: 20px 25px 20px 25px;
+    transition: transform .2s ease-in-out; 
+}
+
+.form__inputGroup .input-name__input:focus~.input-name__title,
+.form__inputGroup .input-name__input:valid~.input-name__title  {
+    transform: translateY(-45px);
+}
+
+.input-name__title {
+    position: absolute;
+    left: 30px;
+    font-size: 16px;
+    font-weight: 300;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    color: #ffffff;
+    transition: transform .2s ease-in-out;
+}
+
+.form__loginRoute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__btn {
+    padding: 16px 67px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    font-family: 'inter';
+    font-weight: 200;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+.form__btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.loginRoute__descr {
+    margin-bottom: 3px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.loginRoute__link {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.from__errorSpan {
+    color: var(--primary);
+    position: absolute;
+    top: 50%;
+}

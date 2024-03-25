@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "Inter";
+  src: local("Inter-Thin"),
+    url("../font/Inter-Thin.ttf");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter-ExtraLight"),
+    url("../font/Inter-ExtraLight.ttf");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter-Light"),
+    url("../font/Inter-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter-Regular"),
+    url("../font/Inter-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter-Medium"),
+    url("../font/Inter-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter-SemiBold"),
+    url("../font/Inter-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter-Bold"),
+    url("../font/Inter-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter-ExtraBold"),
+    url("../font/Inter-ExtraBold.ttf");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+  --primary: #ff6666;
+  --primary-hover: #ff7e7e;
+
+  --secondary: #ffd3d3;
+
+  --mains-color: #373737;
+
+  --text-primary: #2d2d2d;
+  --text-secondary: #fff;
+  --text-third: #8b8b8b;
+
+  --background: #fbfffa;
+  --background-input: #fffefe;
+}
+
+body {
+  overflow: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  position: relative;
+  left: -10px; /* Сдвиг влево на 10 пикселей */
+  bottom: -5px; /* Сдвиг вниз на 5 пикселей */
+  border-radius: 10px;
+  background-color: var(--primary);
+}
+
+body,
+p {
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+  color: var(--text-primary);
+}
