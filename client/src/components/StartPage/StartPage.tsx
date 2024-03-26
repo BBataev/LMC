@@ -3,11 +3,25 @@ import "./StartPage.css";
 
 export const StartPage = () => {
   return (
-    <div>
-      <h1>Че ты выбираешь</h1>
-      <div>
-        <Link to="/registration">В жопу раз</Link>
-        <Link to="/login">Вилкой в глаз</Link>
+    <div className="startPage">
+      <div className="startPage-header">
+        <img className="header__logo" src="LMC.svg"/>
+        <Link className="header__link" to="/login">
+          Войти
+        </Link>
+      </div>
+
+      <div className="startPage-main">
+        <img className="main__logo" src="logo.svg" alt="file pic" />
+        <h1 className="main__title">
+          Ваши идеи, планы, документы. Добро пожаловать в LMC
+        </h1>
+        <p className="main__descr">
+          LMC лучшее рабочее пространство, где можно просто творить
+        </p>
+        <Link className="main__link" to="/registration">
+          Создать аккаунт
+        </Link>
       </div>
     </div>
   );
