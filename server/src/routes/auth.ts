@@ -9,7 +9,7 @@ export const authRouter = Router();
 const RegisterSchema = z.object({
   username: z.string(),
   email: z.string().email({ message: "Некоректный формат email" }),
-  password: z.string(),
+  password: z.string().min(8),
 });
 
 const LoginSchema = z.object({

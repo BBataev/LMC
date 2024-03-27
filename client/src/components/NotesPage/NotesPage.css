@@ -3,3 +3,12 @@
     gap: 40px;
     padding-top: 120px;
 }
+
+.notesPage-controller {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    bottom: 50px;
+    left: 50px;
+}

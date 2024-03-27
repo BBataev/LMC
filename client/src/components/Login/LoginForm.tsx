@@ -38,6 +38,7 @@ export const LoginForm = () => {
               className="input-name__input"
               type="text"
               onChange={(event) => setEmail(event.target.value)}
+              placeholder=""
               required
             />
             <label className="input-name__title">Email</label>
@@ -47,13 +48,15 @@ export const LoginForm = () => {
               className="input-name__input"
               type="password"
               onChange={(event) => setPassword(event.target.value)}
+              placeholder=""
               required
             />
             <label className="input-name__title">Пароль</label>
           </div>
         </div>
+        { loginMutation.error && <span className="form__error">{loginMutation.error.message}</span> }
         <Button title="Войти" isLoading={loginMutation.isPending} size="big"/>
-        <div className="form__loginRoute">
+        <div className="form-loginRoute">
           <span className="loginRoute__descr">Хотите создать аккаунт?</span>
           <Link className="loginRoute__link" to="/registration">
             Регистрирация

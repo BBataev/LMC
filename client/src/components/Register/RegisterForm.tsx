@@ -26,9 +26,8 @@ export const RegisterForm = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    registerMutations.mutate();
+    registerMutations.mutateAsync();
   };
-
   return (
     <div className="register">
       <form className="register__form" onSubmit={handleSubmit}>
@@ -40,6 +39,7 @@ export const RegisterForm = () => {
               type="text"
               name="username"
               onChange={(event) => setUsername(event.target.value)}
+              placeholder=""
               required
             />
             <label className="input-name__title">Имя</label>
@@ -47,9 +47,10 @@ export const RegisterForm = () => {
           <div className="form__inputGroup form__input-email">
             <input
               className="input-name__input"
-              type="text"
+              type="email"
               name="email"
               onChange={(event) => setEmail(event.target.value)}
+              placeholder=""
               required
             />
             <label className="input-name__title">Email</label>
@@ -60,6 +61,7 @@ export const RegisterForm = () => {
               type="password"
               name="password"
               onChange={(event) => setPassword(event.target.value)}
+              placeholder=""
               required
             />
             <label className="input-name__title">Пароль</label>
@@ -70,6 +72,9 @@ export const RegisterForm = () => {
           size="big"
           isLoading={registerMutations.isPending}
         />
+        {registerMutations.error && (
+          <span>{registerMutations.error.message}</span>
+        )}
         <div className="form__loginRoute">
           <span className="loginRoute__descr">Уже есть аккаунт?</span>
           <Link className="loginRoute__link" to="/login">

@@ -32,8 +32,8 @@ export const FetchNoteListSchema = z.object({
 
 export type FetchNoteListRes = z.infer<typeof FetchNoteListSchema>;
 
-export function fetchNoteList(): Promise<FetchNoteListRes> {
-  return fetch("/api/notes")
+export function fetchNoteList(page: number): Promise<FetchNoteListRes> {
+  return fetch(`/api/notes?page=${page}`)
     .then((res) => res.json())
     .then((data) => FetchNoteListSchema.parse(data));
 }
