@@ -15,10 +15,10 @@ export interface NoteProps {
 
 export const NoteView: FC<NoteProps> = ({ note }) => {
   return (
-    <div className="post">
-      <span className="post__createTime">{formatDate(note.createdAt)}</span>
-      <h1 className="post__title">{note.title}</h1>
-      <p className="post__descr">&emsp;{note.text}</p>
+    <div className="note">
+      <span className="note__createTime">{formatDate(note.createdAt)}</span>
+      <h1 className="note__title">{note.title}</h1>
+      <p className="note__descr">&emsp;{note.text}</p>
     </div>
   );
 };

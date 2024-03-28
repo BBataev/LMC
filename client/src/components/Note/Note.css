@@ -1,4 +1,4 @@
-.post {
+.note {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -10,22 +10,23 @@
     background-color: var(--background-input);
 }
 
-.post__createTime {
+.note__createTime {
     position: absolute;
     top: 17px;
     right: 26px;
     color: var(--text-third);
 }
 
-.post__title {
+.note__title {
     padding-left: 10px;
     margin: 0;
     margin-bottom: 25px;
+    text-align: start;
     font-size: 35px;
     font-weight: 400;
 }
 
-.post__descr {
+.note__descr {
     text-align: start;
     font-size: 20px;
 }
