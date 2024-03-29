@@ -18,7 +18,7 @@
 }
 
 .noteForm-text {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
 }
 
 .title__inputGroup {
@@ -85,4 +85,9 @@
 
 .noteForm__btn:hover {
     background-color: var(--primary-hover);
+}
+
+.noteForm__errorMassage {
+    color: var(--primary);
+    margin-bottom: 14px;
 }

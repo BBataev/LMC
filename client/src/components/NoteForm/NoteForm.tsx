@@ -10,6 +10,8 @@ export const NoteForm = () => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
 
+  const [error, setError] = useState<string | undefined>();
+
   const saveMutation = useMutation(
     {
       mutationFn: () => createNote(title, text),
@@ -24,7 +26,14 @@ export const NoteForm = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    saveMutation.mutate();
+
+    console.log(text.length);
+
+    if (text.length < 10) {
+      setError("Текст поста должен быть не меньше 10 символов");
+    } else {
+      saveMutation.mutate();
+    }
   };
 
   return (
@@ -49,11 +58,13 @@ export const NoteForm = () => {
             value={text}
             onChange={(e) => {
               setText(e.target.value);
+              setError(undefined);
             }}
             required
           />
           <label className="title__labelGroup text__label">Текст</label>
         </div>
+        {error && <span className="noteForm__errorMassage">{error}</span>}
         <Button
           title="Сохранить"
           size="big"
