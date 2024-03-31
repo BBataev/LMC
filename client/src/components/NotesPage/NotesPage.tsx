@@ -43,9 +43,15 @@ export const NotesPage = () => {
       return (
         <div className="error">
           <h1 className="error__title">
-            Произошла ошибка повторите попытку позже...
+            Произошла ошибка попробуйте зайти позже...
           </h1>
-          <button>Попробовать снова</button>
+          <Button
+            title="Попробовать снова"
+            size="big"
+            onClick={() => {
+              noteList.refetch();
+            }}
+          />
         </div>
       );
 

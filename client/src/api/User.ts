@@ -14,25 +14,20 @@ export const fetchUser = (id: string): Promise<User> => {
     .then((data) => UserScema.parse(data));
 };
 
-export async function registerUser(
+export function registerUser(
   username: string,
   email: string,
   password: string
-) {
-  const res = await fetch("/api/register", {
+): Promise<void> {
+  return fetch("/api/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ username, email, password }),
-  }); 
-
-  if (!res.ok) {
-    const errorMessage = await res.text(); 
-    throw new Error(errorMessage);
-  }
-
-  return;
+  })
+    .then(Validation)
+    .then(() => undefined);
 }
 
 export function loginUser(email: string, password: string): Promise<void> {
@@ -53,7 +48,7 @@ export function logoutUser(): Promise<void> {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then(() => undefined)
+  }).then(() => undefined);
 }
 
 export function fetchMe(): Promise<User> {

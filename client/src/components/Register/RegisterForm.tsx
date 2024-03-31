@@ -11,6 +11,8 @@ export const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [error, setError] = useState<string | undefined>();
+
   const navigate = useNavigate();
 
   const registerMutations = useMutation(
@@ -26,7 +28,11 @@ export const RegisterForm = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    registerMutations.mutate();
+    if (password.length < 8) {
+      setError("Пароль должен быть длиннее 7 символов");
+    } else {
+      registerMutations.mutate();
+    }
   };
   return (
     <div className="register">
@@ -60,15 +66,21 @@ export const RegisterForm = () => {
               className="input-name__input"
               type="password"
               name="password"
-              onChange={(event) => setPassword(event.target.value)}
+              onChange={(event) => {
+                setPassword(event.target.value);
+                setError("")
+              }}
               placeholder=""
               required
             />
             <label className="input-name__title">Пароль</label>
           </div>
         </div>
+        {error && <span className="form__errorMessage">{error}</span>}
         {registerMutations.error && (
-          <span className="form__errorMessage">{registerMutations.error.message}</span>
+          <span className="form__errorMessage">
+            {registerMutations.error.message}
+          </span>
         )}
         <Button
           title="Зарегистрироваться"

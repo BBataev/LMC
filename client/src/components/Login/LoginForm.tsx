@@ -17,7 +17,7 @@ export const LoginForm = () => {
       mutationFn: () => loginUser(email, password),
       onSuccess() {
         queryClient.invalidateQueries({ queryKey: ["users", "me"] });
-        navigate('/notes');
+        navigate("/notes");
       },
     },
     queryClient
@@ -36,7 +36,8 @@ export const LoginForm = () => {
           <div className="form__inputGroup form__input-email">
             <input
               className="input-name__input"
-              type="text"
+              type="email"
+              name="email"
               onChange={(event) => setEmail(event.target.value)}
               placeholder=""
               required
@@ -54,8 +55,12 @@ export const LoginForm = () => {
             <label className="input-name__title">Пароль</label>
           </div>
         </div>
-        { loginMutation.error && <span className="form__error">{loginMutation.error.message}</span> }
-        <Button title="Войти" isLoading={loginMutation.isPending} size="big"/>
+        {loginMutation.error && (
+          <span className="form__error">
+            { loginMutation.error.message }
+          </span>
+        )}
+        <Button title="Войти" isLoading={loginMutation.isPending} size="big" />
         <div className="form-loginRoute">
           <span className="loginRoute__descr">Хотите создать аккаунт?</span>
           <Link className="loginRoute__link" to="/registration">

@@ -12,3 +12,18 @@
     bottom: 50px;
     left: 50px;
 }
+
+.error {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.error__title {
+    margin: 0;
+    margin-bottom: 60px;
+    font-size: 46px;
+    color: var(--text-primary);
+}
