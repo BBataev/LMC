@@ -7,6 +7,7 @@
 }
 
 .register__form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,5 +119,11 @@
 .loginRoute__link {
   font-size: 13px;
   text-decoration: none;
+  color: var(--primary);
+}
+
+.form__errorMessage {
+  position: absolute;
+  bottom: 26%;
   color: var(--primary);
 }

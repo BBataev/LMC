@@ -14,18 +14,25 @@ export const fetchUser = (id: string): Promise<User> => {
     .then((data) => UserScema.parse(data));
 };
 
-export function registerUser(
+export async function registerUser(
   username: string,
   email: string,
   password: string
-): Promise<void> {
-  return fetch("/api/register", {
+) {
+  const res = await fetch("/api/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ username, email, password }),
-  }).then(() => undefined);
+  }); 
+
+  if (!res.ok) {
+    const errorMessage = await res.text(); 
+    throw new Error(errorMessage);
+  }
+
+  return;
 }
 
 export function loginUser(email: string, password: string): Promise<void> {

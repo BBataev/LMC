@@ -7,6 +7,7 @@
 }
 
 .login__form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,6 +89,8 @@
 }
 
 .form__error {
+  position: absolute;
+  bottom: 35%;
   color: var(--primary);
 }
 
@@ -123,10 +126,4 @@
   font-size: 13px;
   text-decoration: none;
   color: var(--primary);
-}
-
-.from__errorSpan {
-  color: var(--primary);
-  position: absolute;
-  top: 50%;
 }

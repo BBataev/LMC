@@ -16,7 +16,7 @@ export const RegisterForm = () => {
   const registerMutations = useMutation(
     {
       mutationFn: () => registerUser(username, email, password),
-      onSuccess() {
+      onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["users", "me"] });
         navigate("/notes");
       },
@@ -26,7 +26,7 @@ export const RegisterForm = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    registerMutations.mutateAsync();
+    registerMutations.mutate();
   };
   return (
     <div className="register">
@@ -67,14 +67,14 @@ export const RegisterForm = () => {
             <label className="input-name__title">Пароль</label>
           </div>
         </div>
+        {registerMutations.error && (
+          <span className="form__errorMessage">{registerMutations.error.message}</span>
+        )}
         <Button
           title="Зарегистрироваться"
           size="big"
           isLoading={registerMutations.isPending}
         />
-        {registerMutations.error && (
-          <span>{registerMutations.error.message}</span>
-        )}
         <div className="form__loginRoute">
           <span className="loginRoute__descr">Уже есть аккаунт?</span>
           <Link className="loginRoute__link" to="/login">
