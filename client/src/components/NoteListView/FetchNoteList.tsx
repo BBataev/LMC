@@ -6,7 +6,7 @@ import { NoteListView } from "./NoteListVIew"
 export const FetchNoteListView = () => {
     const noteList = useQuery(
         {
-            queryFn: () => fetchNoteList(),
+            queryFn: () => fetchNoteList(0),
             queryKey: ["notes"]
         },
         queryClient

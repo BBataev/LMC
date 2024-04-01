@@ -17,7 +17,7 @@ export const Nameout = () => {
       return <h2 className="pending">Загрузка...</h2>;
 
     case "error":
-      return <h2 className="username">Испанцы.... Опять..</h2>;
+      return <h2 className="username">Ошибка...</h2>;
 
     case "success":
       return <h2 className="username">{userInfo.data.username}</h2>;
